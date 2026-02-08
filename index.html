@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en" class="h-full overflow-hidden">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+    <title>SmartFileOrganiser</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#E1AD01",
+                        "bg-main": "#0F0F0F",
+                        "bg-card": "#1A1A1A",
+                        "bg-sidebar": "#141414",
+                        "accent-muted": "#B59410",
+                    },
+                    fontFamily: {
+                        "sans": ["Quicksand", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        html, body, #root { height: 100%; margin: 0; padding: 0; overflow: hidden; position: fixed; width: 100%; }
+        body { font-family: 'Quicksand', sans-serif; background-color: #0F0F0F; color: #d1d5db; }
+        
+        .custom-scrollbar {
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #333 transparent;
+            -webkit-overflow-scrolling: touch;
+        }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #E1AD01; }
+        
+        .masonry-grid {
+            columns: 2;
+            column-gap: 1rem;
+        }
+        @media (min-width: 768px) { .masonry-grid { columns: 3; } }
+        @media (min-width: 1024px) { .masonry-grid { columns: 4; } }
+        @media (min-width: 1536px) { .masonry-grid { columns: 5; } }
+        
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1rem;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .fill-1 { font-variation-settings: 'FILL' 1; }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="antialiased">
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
